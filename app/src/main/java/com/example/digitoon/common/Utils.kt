@@ -53,7 +53,7 @@ fun isInternetReachable(): Boolean {
     var isReachable: Boolean = false;
 
     try {
-        val urlConnection = URL("http://www.android.com/").openConnection() as HttpURLConnection
+        val urlConnection = URL("https://www.google.com/").openConnection() as HttpURLConnection
         urlConnection.setRequestProperty("User-Agent", "Android Application");
         urlConnection.setRequestProperty("Connection", "close");
         urlConnection.connectTimeout = 10 * 1000;
