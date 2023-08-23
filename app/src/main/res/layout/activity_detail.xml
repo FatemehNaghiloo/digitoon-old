@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailActivity">
+
+    <com.example.digitoon.customView.scroll.ObservableScrollView
+        android:id="@+id/observable_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.digitoon.customView.MyImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewAspectRatio="1.3"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_poster"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="title" />
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+                <TextView
+                    android:id="@+id/tv_year"
+                    style="@style/tv_title_style"
+                    android:layout_alignParentStart="true"
+                    tools:text="year" />
+
+                <TextView
+                    android:id="@+id/tv_runtime"
+                    style="@style/tv_title_style"
+                    android:layout_centerInParent="true"
+                    tools:text="runtime" />
+
+                <TextView
+                    android:id="@+id/tv_imdb_rating"
+                    style="@style/tv_title_style"
+                    android:layout_alignParentStart="true"
+                    tools:text="imdbRating" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/rel">
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Genre" />
+
+                <TextView
+                    android:id="@+id/tv_genre"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Director" />
+
+                <TextView
+                    android:id="@+id/tv_director"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Writer" />
+
+                <TextView
+                    android:id="@+id/tv_writer"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Actors" />
+
+                <TextView
+                    android:id="@+id/tv_actors"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="type" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Rated" />
+
+                <TextView
+                    android:id="@+id/tv_rated"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="released" />
+
+                <TextView
+                    android:id="@+id/tv_released"
+                    style="@style/tv_ans_style"/>
+
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Plot" />
+
+                <TextView
+                    android:id="@+id/tv_plot"
+                    style="@style/tv_ans_style"/>
+
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Language" />
+
+                <TextView
+                    android:id="@+id/tv_language"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Country" />
+
+                <TextView
+                    android:id="@+id/tv_country"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Awards" />
+
+                <TextView
+                    android:id="@+id/tv_awards"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="Metascore" />
+
+                <TextView
+                    android:id="@+id/tv_metascore"
+                    style="@style/tv_ans_style"/>
+
+
+                <TextView
+                    style="@style/tv_title_style"
+                    android:text="imdb votes" />
+
+                <TextView
+                    android:id="@+id/tv_imdb_votes"
+                    style="@style/tv_ans_style"/>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_rating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.example.digitoon.customView.scroll.ObservableScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:alpha="0"
+        app:cardElevation="4dp">
+
+        <TextView
+            android:id="@+id/tv_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            tools:text="title" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
